@@ -1,6 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import { useScroll, motion, useTransform } from "framer-motion";
-import throttle from "lodash/throttle";
+import React, { useRef, useEffect, useState } from "react";
+import { useScroll, motion, useTransform, useMotionValue } from "framer-motion";
 
 function Paragraph({ value, specialWordsIndices }) {
   const element = useRef(null);
@@ -15,38 +14,51 @@ function Paragraph({ value, specialWordsIndices }) {
     document
       .querySelectorAll(".special-word")[0]
       .addEventListener("mousemove", (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
+        const x = e.clientX + window.scrollX;
+        const y = e.clientY + window.scrollY;
 
-        tooltip1.style.left = x - 100 + "px";
-        tooltip1.style.top = y - 375 + "px";
+        tooltip1.style.transform = `
+      translate(
+          ${x + 100}px,
+          ${y - 900}px
+      )`;
         tooltip1.style.opacity = 1;
         tooltip1.style.transition = "all 0.1s linear";
       });
+
     document
       .querySelectorAll(".special-word")[0]
       .addEventListener("mouseleave", (e) => {
-        tooltip1.style.left = -100 + "px";
-        tooltip1.style.top = -200 + "px";
+        tooltip1.style.transform = `
+      translate(
+          ${-150}px,
+          ${-100}px
+      )`;
         tooltip1.style.opacity = 0;
         tooltip1.style.transition = "all 0.1s linear";
       });
     document
       .querySelectorAll(".special-word")[1]
       .addEventListener("mousemove", (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
+        const x = e.clientX + window.scrollX;
+        const y = e.clientY + window.scrollY;
 
-        tooltip1.style.left = x - 100 + "px";
-        tooltip1.style.top = y - 375 + "px";
+        tooltip1.style.transform = `
+      translate(
+        ${x + 100}px,
+        ${y - 900}px
+      )`;
         tooltip1.style.opacity = 1;
         tooltip1.style.transition = "all 0.1s linear";
       });
     document
       .querySelectorAll(".special-word")[1]
       .addEventListener("mouseleave", (e) => {
-        tooltip1.style.left = -100 + "px";
-        tooltip1.style.top = -200 + "px";
+        tooltip1.style.transform = `
+      translate(
+          ${-150}px,
+          ${-100}px
+      )`;
         tooltip1.style.opacity = 0;
         tooltip1.style.transition = "all 0.1s linear";
       });
@@ -73,12 +85,6 @@ function Paragraph({ value, specialWordsIndices }) {
       </p>
       <div className="tooltip tooltip-1">
         <p>We only have a few members</p>
-      </div>
-      <div className="tooltip tooltip-2">
-        <p>The members are experts in diverse fields</p>
-      </div>
-      <div className="tooltip tooltip-3">
-        <p>The members are very experienced</p>
       </div>
     </div>
   );
