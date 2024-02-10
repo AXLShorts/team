@@ -35,7 +35,7 @@ function Paragraph({ value, specialWordsIndices }) {
           ${-100}px
       )`;
         tooltip1.style.opacity = 0;
-        tooltip1.style.transition = "all 0.1s linear";
+        tooltip1.style.transition = "all 0.5s ease-in";
       });
     document
       .querySelectorAll(".special-word")[1]
@@ -60,7 +60,7 @@ function Paragraph({ value, specialWordsIndices }) {
           ${-100}px
       )`;
         tooltip1.style.opacity = 0;
-        tooltip1.style.transition = "all 0.1s linear";
+        tooltip1.style.transition = "all 0.5s ease-in";
       });
   }, []);
 
