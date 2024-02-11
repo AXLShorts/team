@@ -34,10 +34,7 @@ const HorizontalScrollCarousel = () => {
 const Card = ({ card }) => {
   return (
     <a href={card.demo}>
-      <div
-        key={card.id}
-        className="group relative h-[80vh] w-[66vw] bg-neutral-200"
-      >
+      <div key={card.id} className="group relative h-[80vh] w-[66vw]">
         <div className="relative h-[75vh] w-[66vw] overflow-hidden">
           <div
             style={{
