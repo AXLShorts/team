@@ -11,9 +11,9 @@ function Nav() {
   };
 
   return (
-    <div>
+    <div className="sticky top-0 z-10">
       {showTopbar && (
-        <div className="absolute w-full h-[15vh] flex justify-between bg-white bg-opacity-70 backdrop-blur-md items-center top-0 px-5 overflow-hidden">
+        <div className="w-full h-[15vh] flex justify-between bg-white bg-opacity-50 backdrop-blur-md items-center px-5 overflow-hidden">
           <img
             src="Assets/Logo_down.png"
             alt="Logo Here"

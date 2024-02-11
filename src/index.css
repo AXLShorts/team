@@ -96,26 +96,90 @@ code {
 }
 
 .tooltip {
-  font-size: medium;
+  font-size: 1.5vw;
   position: absolute;
-  padding: 20px;
-  color: white;
-  background-color: black;
+  padding: 10px 20px;
+  color: black;
   border-radius: 50px;
-  /* opacity: 0; */
 }
 .tooltip-1 {
-  top: -15vh;
-  left: -100px;
-  opacity: 0;
+  top: -10vh;
+  left: -5vw;
 }
 .tooltip-2 {
-  top: 5000;
-  right: 5000;
-  opacity: 0;
+  top: 50vh;
+  left: -5vw;
 }
 .tooltip-3 {
-  bottom: 5000;
-  left: 5000;
-  opacity: 0;
+  top: 10vh;
+  left: -5vw;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 34px));
+  }
+}
+
+.team-slide {
+  animation: 60s slide infinite linear;
+}
+
+@keyframes slide2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(calc(-100% - 32px));
+  }
+}
+
+.team-slide-2 {
+  animation: 60s slide2 infinite linear;
+}
+
+.parent-slide:hover .team-slide {
+  animation-play-state: paused;
+}
+
+.parent-slide:hover .team-slide-2 {
+  animation-play-state: paused;
+}
+
+.parent-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, #180c39, transparent);
+}
+
+.parent-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to left, #3b0f24, transparent);
+}
+
+.team-big-card {
+  width: 100vw;
+  margin-right: 50px;
+}
+
+.shadow-box-behind {
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-box-behind:hover {
+  box-shadow: 5px 5px rgb(255, 0, 0, 0.5);
 }

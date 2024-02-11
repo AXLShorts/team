@@ -1,43 +1,38 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Paragraph from "../Paragraph";
+import CTA from "../CTA";
 
 function About() {
   const text =
     "A small team with big ideas. We have the variety of an agency and the experience of a studio.";
 
-  useEffect(() => {
-    document
-      .querySelectorAll(".special-word")[0]
-      .addEventListener("mouseenter", function () {
-        document.querySelectorAll(".special-word")[1].classList.add("hovered");
-      });
-
-    document
-      .querySelectorAll(".special-word")[0]
-      .addEventListener("mouseleave", function () {
-        document
-          .querySelectorAll(".special-word")[1]
-          .classList.remove("hovered");
-      });
-
-    document
-      .querySelectorAll(".special-word")[1]
-      .addEventListener("mouseenter", function () {
-        document.querySelectorAll(".special-word")[0].classList.add("hovered");
-      });
-
-    document
-      .querySelectorAll(".special-word")[1]
-      .addEventListener("mouseleave", function () {
-        document
-          .querySelectorAll(".special-word")[0]
-          .classList.remove("hovered");
-      });
-  }, []);
+  const data = [
+    {
+      direction: false,
+      title: "About us",
+      text: "A small team with big ideas. We have the variety of an agency and the experience of a studio.",
+      image: "https://picsum.photos/200",
+    },
+    {
+      direction: true,
+      title: "Our mission",
+      text: "We are a team of creatives who are excited about unique ideas and help businesses to create amazing identity by crafting top-notch digital solutions.",
+      image: "https://picsum.photos/300",
+    },
+    {
+      direction: false,
+      title: "Our vision",
+      text: "We are a team of creatives who are excited about unique ideas and help businesses to create amazing identity by crafting top-notch digital solutions.",
+      image: "https://picsum.photos/400",
+    },
+  ];
 
   return (
-    <div className="bg-white [background:radial-gradient(125%_125%_at_50%_90%,#fff_40%,#63e_100%)] p-5 pt-[5%] sm:pt-64 overflow-x-hidden">
+    <div className="bg-white [background:radial-gradient(125%_125%_at_50%_90%,#fff_40%,#63e_100%)] p-5 pt-[5%] sm:pt-32 overflow-x-hidden">
       <Paragraph value={text} specialWordsIndices={[1, 2, 9, 15]} />
+      {data.map((item, index) => (
+        <CTA key={index} {...item} />
+      ))}
     </div>
   );
 }

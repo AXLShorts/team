@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useScroll, motion, useTransform, useMotionValue } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { useScroll, motion, useTransform } from "framer-motion";
 
 function Paragraph({ value, specialWordsIndices }) {
   const element = useRef(null);
@@ -10,58 +10,78 @@ function Paragraph({ value, specialWordsIndices }) {
   const words = value.split(" ");
 
   useEffect(() => {
+    const specialWords = document.querySelectorAll(".special-word");
     const tooltip1 = document.querySelector(".tooltip-1");
-    document
-      .querySelectorAll(".special-word")[0]
-      .addEventListener("mousemove", (e) => {
-        const x = e.clientX + window.scrollX;
-        const y = e.clientY + window.scrollY;
+    const tooltip2 = document.querySelector(".tooltip-2");
+    const tooltip3 = document.querySelector(".tooltip-3");
 
-        tooltip1.style.transform = `
-      translate(
-          ${x + 100}px,
-          ${y - 900}px
-      )`;
-        tooltip1.style.opacity = 1;
-        tooltip1.style.transition = "all 0.1s linear";
-      });
+    specialWords[0].addEventListener("mousemove", (e) => {
+      tooltip1.style.opacity = "1";
+      const x = e.clientX;
+      tooltip1.style.transform = `translateX(${x}px)`;
+      tooltip1.style.top = "0vh";
+      tooltip1.style.transition = "all 0.2s linear";
+      specialWords[0].classList.add("hovered");
+      specialWords[1].classList.add("hovered");
+    });
 
-    document
-      .querySelectorAll(".special-word")[0]
-      .addEventListener("mouseleave", (e) => {
-        tooltip1.style.transform = `
-      translate(
-          ${-150}px,
-          ${-100}px
-      )`;
-        tooltip1.style.opacity = 0;
-        tooltip1.style.transition = "all 0.5s ease-in";
-      });
-    document
-      .querySelectorAll(".special-word")[1]
-      .addEventListener("mousemove", (e) => {
-        const x = e.clientX + window.scrollX;
-        const y = e.clientY + window.scrollY;
+    specialWords[0].addEventListener("mouseleave", () => {
+      tooltip1.style.opacity = "0";
+      tooltip1.style.left = "-10vw";
+      tooltip1.style.top = "-10vh";
+      tooltip1.style.transition = "all 0.2s linear";
+      specialWords[1].classList.remove("hovered");
+      specialWords[0].classList.remove("hovered");
+    });
 
-        tooltip1.style.transform = `
-      translate(
-        ${x + 100}px,
-        ${y - 900}px
-      )`;
-        tooltip1.style.opacity = 1;
-        tooltip1.style.transition = "all 0.1s linear";
-      });
-    document
-      .querySelectorAll(".special-word")[1]
-      .addEventListener("mouseleave", (e) => {
-        tooltip1.style.transform = `
-      translate(
-          ${-150}px,
-          ${-100}px
-      )`;
-        tooltip1.style.opacity = 0;
-        tooltip1.style.transition = "all 0.5s ease-in";
-      });
+    specialWords[1].addEventListener("mousemove", (e) => {
+      tooltip1.style.opacity = "1";
+      const x = e.clientX;
+      tooltip1.style.transform = `translateX(${x}px)`;
+      tooltip1.style.top = "0vh";
+      tooltip1.style.transition = "all 0.2s linear";
+      specialWords[0].classList.add("hovered");
+      specialWords[1].classList.add("hovered");
+    });
+
+    specialWords[1].addEventListener("mouseleave", () => {
+      tooltip1.style.opacity = "0";
+      tooltip1.style.left = "-10vw";
+      tooltip1.style.top = "-10vh";
+      tooltip1.style.transition = "all 0.2s linear";
+      specialWords[1].classList.remove("hovered");
+      specialWords[0].classList.remove("hovered");
+    });
+
+    specialWords[2].addEventListener("mousemove", (e) => {
+      tooltip2.style.opacity = "1";
+      const x = e.clientX;
+      tooltip2.style.transform = `translateX(${x + 200}px)`;
+      tooltip2.style.top = "10vh";
+      tooltip2.style.transition = "all 0.2s linear";
+      specialWords[2].classList.add("hovered");
+    });
+
+    specialWords[2].addEventListener("mouseleave", () => {
+      tooltip2.style.opacity = "0";
+      tooltip2.style.top = "30vh";
+      tooltip2.style.transition = "all 0.2s linear";
+      specialWords[2].classList.remove("hovered");
+    });
+
+    specialWords[3].addEventListener("mousemove", (e) => {
+      tooltip3.style.opacity = "1";
+      const x = e.clientX;
+      tooltip3.style.transform = `translateX(${x}px)`;
+      tooltip3.style.top = "30vh";
+      tooltip3.style.transition = "all 0.2s linear";
+    });
+
+    specialWords[3].addEventListener("mouseleave", () => {
+      tooltip3.style.opacity = "0";
+      tooltip3.style.top = "10vh";
+      tooltip3.style.transition = "all 0.2s linear";
+    });
   }, []);
 
   return (
@@ -83,8 +103,14 @@ function Paragraph({ value, specialWordsIndices }) {
           );
         })}
       </p>
-      <div className="tooltip tooltip-1">
+      <div className="tooltip tooltip-1 hidden lg:flex backdrop-blur-lg bg-white/30 border border-black opacity-0">
         <p>We only have a few members</p>
+      </div>
+      <div className="tooltip tooltip-2 hidden lg:flex backdrop-blur-lg bg-white/30 border border-black opacity-0">
+        <p>Diverse Team</p>
+      </div>
+      <div className="tooltip tooltip-3 hidden lg:flex backdrop-blur-lg bg-white/30 border border-black opacity-0">
+        <p>Experienced Members</p>
       </div>
     </div>
   );

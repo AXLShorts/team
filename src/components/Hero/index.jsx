@@ -2,15 +2,15 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="hero bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] overflow-hidden flex flex-col gap-6 sm:h-[100vh] pt-8 h-full">
+    <div className="hero bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] overflow-hidden flex flex-col gap-6 sm:h-[100vh] h-full">
       <div className="flex justify-center flex-wrap">
-        <h1 className="sm:text-8xl text-4xl sm:pt-24 pt-8 font-extrabold">
+        <h1 className="sm:text-8xl text-4xl sm:pt-16 pt-8 font-extrabold">
           Pixel
         </h1>
-        <h1 className="sm:text-8xl text-4xl sm:pt-24 pt-8 font-extrabold collapse">
+        <h1 className="sm:text-8xl text-4xl sm:pt-16 pt-8 font-extrabold collapse">
           I
         </h1>
-        <h1 className="sm:text-8xl text-4xl sm:pt-24 pt-8 font-extrabold bg-gradient-to-r from-purple-600 via-red-500 to-gray-900 inline-block text-transparent bg-clip-text grd-text">
+        <h1 className="sm:text-8xl text-4xl sm:pt-16 pt-8 font-extrabold bg-gradient-to-r from-purple-600 via-red-500 to-gray-900 inline-block text-transparent bg-clip-text grd-text">
           Perfect
         </h1>
       </div>
