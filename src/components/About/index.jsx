@@ -28,7 +28,10 @@ function About() {
   ];
 
   return (
-    <div className="bg-white [background:radial-gradient(125%_125%_at_50%_90%,#fff_40%,#63e_100%)] p-5 pt-[5%] sm:pt-32 overflow-x-hidden">
+    <div
+      id="about-section"
+      className="bg-white [background:radial-gradient(125%_125%_at_50%_90%,#fff_40%,#63e_100%)] p-5 pt-[5%] sm:pt-32 overflow-x-hidden"
+    >
       <Paragraph value={text} specialWordsIndices={[1, 2, 9, 15]} />
       {data.map((item, index) => (
         <CTA key={index} {...item} />
