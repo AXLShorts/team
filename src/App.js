@@ -5,6 +5,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
+import Contact from "./components/Contact";
 
 import { useEffect } from "react";
 
@@ -23,6 +24,7 @@ function App() {
       <Projects />
       <Team />
       <Testimonials />
+      <Contact />
     </div>
   );
 }
