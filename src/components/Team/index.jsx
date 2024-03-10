@@ -61,20 +61,17 @@ function Team() {
       className="Team h-full py-[10vh]"
       style={{ background: "linear-gradient(to right, #180C39, #3B0F24)" }}
     >
-      <div className="text-white">
-        <h1 className="text-4xl sm:text-6xl font-bold">Our Team</h1>
+      <div className="text-white w-full flex flex-col">
+        <h1 className="text-4xl sm:text-6xl font-bold mx-auto">Our Team</h1>
         <p
-          className="p-5 px-[10%] sm:px-[15%] font-light text-2xl"
+          className="p-5 px-[10%] sm:px-[15%] font-light text-2xl mx-auto"
           id="scrollthis"
         >
           Meet the wonderful young minds at out company.
         </p>
       </div>
 
-      <div
-        className="team-big-card p-5"
-        style={{ background: "linear-gradient(to right, #180C39, #3B0F24)" }}
-      >
+      <div className="team-big-card p-5">
         <div className="team-big-inner-card bg-white rounded-lg p-5 gap-8 hidden md:flex">
           <div className="object-cover">
             <img

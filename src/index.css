@@ -8,11 +8,127 @@
 
 body {
   margin: 0;
+  padding: 0;
+}
+
+.main-div {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+}
+
+.parallax-div {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  height: 35vh;
+  width: 100vw;
+  background: linear-gradient(180deg, rgba(2, 1, 2, 0), #020102);
+}
+
+.gradient-overlay h1 {
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 5%;
+  padding-bottom: 10vh;
+  font-size: 10vw;
+  line-height: 0.8;
+  background: linear-gradient(180deg, #fff, #2d2b36);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  bottom: 0;
+}
+
+.parallax-div img {
+  position: absolute;
+  width: 27.78vw;
+  aspect-ratio: 1/1;
+  opacity: 0.8;
+  transition: 0.5s linear;
+  transform: scale(0);
+  animation: pop 1s ease-in-out forwards;
+  border-radius: 2%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.parallax-div img:hover {
+  opacity: 1;
+}
+
+.parallax-div img:nth-child(1) {
+  top: 70%;
+  left: 90%;
+}
+
+.parallax-div img:nth-child(2) {
+  top: -10%;
+  left: 85%;
+}
+
+.parallax-div img:nth-child(3) {
+  top: -20%;
+  left: 50%;
+}
+
+.parallax-div img:nth-child(4) {
+  top: 30%;
+  left: 60%;
+}
+
+.parallax-div img:nth-child(5) {
+  top: 35%;
+  left: 30%;
+}
+
+.parallax-div img:nth-child(6) {
+  top: 80%;
+  left: 10%;
+}
+
+.parallax-div img:nth-child(7) {
+  top: -5%;
+  left: 10%;
+}
+
+.parallax-div img:nth-child(8) {
+  top: 25%;
+  left: -10%;
+}
+
+.hero-main-content {
+  pointer-events: none;
+}
+body {
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -34,6 +150,7 @@ code {
 
 .hero {
   width: 100%;
+  background: radial-gradient(125% 125% at 50% 10%, transparent 40%, #63e 70%);
 }
 
 .grd-text {
@@ -56,13 +173,14 @@ code {
   font-size: 6.1vw;
   font-weight: 700;
   box-shadow: none;
+  color: white;
   .word {
     padding-right: 12px;
     margin-top: 12px;
     position: relative;
 
     .special-character {
-      background: linear-gradient(to top, white, grey);
+      background: linear-gradient(to top, grey, black);
       background-size: 200% 200%;
       color: transparent;
       -webkit-background-clip: text;
@@ -72,7 +190,7 @@ code {
     .shadow {
       position: absolute;
       opacity: 0.3;
-      color: black;
+      color: white;
     }
   }
 
@@ -99,7 +217,7 @@ code {
   font-size: 1.5vw;
   position: absolute;
   padding: 10px 20px;
-  color: black;
+  color: white;
   border-radius: 50px;
 }
 .tooltip-1 {

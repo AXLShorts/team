@@ -75,18 +75,19 @@ function Testimonials() {
   ];
 
   return (
-    <div className="h-[100%] my-[5vh]">
-      <div>
-        <h2 className="text-4xl sm:text-6xl font-bold">Testimonials</h2>
-        <p className="p-5 px-[10%] sm:px-[15%] font-light text-2xl">
+    <div className="h-[100%] my-[5vh] text-white">
+      <div className="flex flex-col">
+        <h2 className="text-4xl sm:text-6xl font-bold mx-auto">Testimonials</h2>
+        <p className="p-5 px-[10%] sm:px-[15%] font-light text-2xl mx-auto">
           Hear about us from our clients
         </p>
       </div>
       <div className="p-5 h-full w-full">
         <Swiper
           style={{
-            "--swiper-navigation-color": "#000",
-            "--swiper-pagination-color": "#000",
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+            "--swiper-pagination-bullet-inactive-color": "gray", // Set inactive bullet color to gray
           }}
           slidesPerView={1}
           spaceBetween={30}

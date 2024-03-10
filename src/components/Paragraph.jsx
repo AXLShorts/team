@@ -103,13 +103,13 @@ function Paragraph({ value, specialWordsIndices }) {
           );
         })}
       </p>
-      <div className="tooltip tooltip-1 hidden lg:flex backdrop-blur-lg bg-white/30 border border-black opacity-0">
+      <div className="tooltip tooltip-1 hidden lg:flex backdrop-blur-lg  opacity-0">
         <p>We only have a few members</p>
       </div>
-      <div className="tooltip tooltip-2 hidden lg:flex backdrop-blur-lg bg-white/30 border border-black opacity-0">
+      <div className="tooltip tooltip-2 hidden lg:flex backdrop-blur-lg  opacity-0">
         <p>Diverse Team</p>
       </div>
-      <div className="tooltip tooltip-3 hidden lg:flex backdrop-blur-lg bg-white/30 border border-black opacity-0">
+      <div className="tooltip tooltip-3 hidden lg:flex backdrop-blur-lg  opacity-0">
         <p>Experienced Members</p>
       </div>
     </div>

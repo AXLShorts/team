@@ -3,8 +3,10 @@ import { useRef } from "react";
 
 const Projects = () => {
   return (
-    <div className="py-[10vh]">
-      <h1 className="text-[6.11111111vw] font-bold">Projects</h1>
+    <div className="py-[10vh] flex flex-col w-full">
+      <h1 className="text-[6.11111111vw] font-bold text-white mx-auto">
+        Projects
+      </h1>
       <HorizontalScrollCarousel />
     </div>
   );
@@ -45,7 +47,7 @@ const Card = ({ card }) => {
             className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
           ></div>
         </div>
-        <div className="w-full absolute bottom-[-4vw] left-0 flex justify-between z-1 items-center">
+        <div className="w-full absolute bottom-[-4vw] left-0 flex justify-between z-1 items-center text-white">
           <h2 className="text-[5vw] flex hover:border-b-black">
             <span>{card.title}</span> <span className="-rotate-45">&rarr;</span>
           </h2>

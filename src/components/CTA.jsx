@@ -8,7 +8,7 @@ function CTA({ direction, title, text, image }) {
 
   return (
     <motion.div
-      className={`flex-col justify-center items-center gap-5 sm:gap-10 p-5 sm:p-10 ${
+      className={`flex-col justify-center items-center gap-5 sm:gap-10 p-5 sm:p-10 text-white ${
         direction ? "sm:flex sm:flex-row-reverse" : "sm:flex sm:flex-row"
       }`}
       ref={ref}
